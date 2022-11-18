@@ -19,6 +19,9 @@ CDS Viewler sanal veri modelleri olduğundan bir proje veya bir nesne için olu�
 
 ![image](https://user-images.githubusercontent.com/76265899/202612936-6b5b5749-0c0c-4207-b0d2-2cf2ebc82598.png)
 
+![image](https://user-images.githubusercontent.com/76265899/202613492-ee4ea526-f290-4fce-b104-58fac4768bb0.png)
+![image](https://user-images.githubusercontent.com/76265899/202613538-f24fcccf-9272-4c62-a523-7dc8975ac003.png)
+
 
 
 
