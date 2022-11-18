@@ -36,6 +36,8 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
 ### Cds Görünümü
 ![image](https://user-images.githubusercontent.com/76265899/202614273-464a93d3-1733-421f-a0d8-e6e7ff86fa98.png)
 
+  Bunlara ek alarak sql in sağladığı case when yapılarını ve aggregate fonksiyonları da kullanabilir. Bunlar max min avg sum count dır.
+
 #### CDS View Parameters
 
   CDS View' lerde veri fitrelemek için 'WHERE' yan tümcesini kullanabiliriz. 'Parameters' özelliği ile veri fitrelemesi yapmak mümkündür.
@@ -86,10 +88,36 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
   ![image](https://user-images.githubusercontent.com/76265899/202619133-27a42835-e617-4edb-b3bb-44c02b2549af.png)
 
 Union & Union All
-
+  2 farklı tablodaki alanları select çekmek istediğimizde kullanıyoruz. Fakat tablodan çekeceğimiz alanların aynı alanları olması zorunludur.
   Union sorgularında varsayılan mod Union Distinct'dir ve ikinci sorgudaki yinelenen kayıtları ortadan kaldırır.
 
   Union All da her iki tabloda ortak olan kayıtlar tolere edilmezler. Tekrar eden kayıtlar sorgu çıktısına dahil edilir. Veri duplicate çekilmiş olur.
 
 
 #### Annotiation
+    
+    Ek açıklamalar anlamına gelen annotiation lar cds kullanımımızı zenginleştirir. Bunlar @ ile başlayıp yorum satırı gibi gözükse de cds view e özellikler katar.
+    
+    @AbapCatalog.compiler.compareFilter: true: Verileri filtreleme davranışını tanımlar, yani önce filtre koşullarını karşılaştırır ve eğer eşleşirlerse veriler getirilir. 
+    Bunu 'false' olarak ayarlarsak 'KEY' kelimesini alanın önüne eklemenize bakılmaksızın, DB tablosu KEY alanları CDS View'ler için de KEY alanlar olarak tanımlanacaktır.
+   
+   @AbapCatalog.preserveKey: true: DB tablolarında tanımlanmış birden fazla KEY alan olabilir ve bu KEY alanların oluşturduğumuz CSD View'lerin KEY alanları olmasını isteyebiliriz.
+   
+   @AccessControl.authorizationCheck: #NOT_REQUIRED: CDS View'lere 'Güvenlik' parçası eklemek için kullanılır. 
+   
+   @EndUserText.label: ‘CDS View type #BASIC’:
+CDS View'ler üzerindeki 'Açıklama' kısmının tayini için kullanılır.
+
+    ABAP Annotations:
+
+### AbapCatalog Annotations                     ### Component Annotations
+    AccessControl Annotations                       Analytics Annotations
+    ClientDependent Annotations                     AnalyticsDetails Annotations
+    DataAging Annotations                           Consumption Annotations
+    EndUserText Annotations                         Hierarchy Annotations
+    Environment Annotations                         OData Annotations
+                                                    Search Annotations
+    
+
+
+
