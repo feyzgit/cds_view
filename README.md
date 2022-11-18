@@ -29,10 +29,10 @@ CDS Viewler sanal veri modelleri olduğundan bir proje veya bir nesne için olu�
   Elimizdeki tabloda para birimleri farklı olsa bile verdiğimiz parametredeki para birimine dönüşür.
 
 ![image](https://user-images.githubusercontent.com/76265899/202614248-3d8a5649-9329-4adc-8c93-8f3b2720271f.png)
-Se16n Görünümü
+###Se16n Görünümü
 ![image](https://user-images.githubusercontent.com/76265899/202614369-6ff76e39-7e93-4b49-a2f2-6c92ccaf98ff.png)
 
-Cds Görünümü
+###Cds Görünümü
 ![image](https://user-images.githubusercontent.com/76265899/202614273-464a93d3-1733-421f-a0d8-e6e7ff86fa98.png)
 
 
