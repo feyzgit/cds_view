@@ -71,7 +71,7 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
 
 ![image](https://user-images.githubusercontent.com/76265899/202618387-cedbae26-73b6-4236-9abb-8f467dfdeb8c.png)
 
-![image](https://user-images.githubusercontent.com/76265899/202618482-eecc13dd-1dc0-493b-9f19-91744a452f5e.png)
+![image](https://user-images.githubusercontent.com/76265899/202618582-ca9f6b7d-0606-4c52-a325-af53984c9cf6.png)
 
 
 
