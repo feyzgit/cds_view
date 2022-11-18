@@ -10,3 +10,11 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
 
 ![image](https://user-images.githubusercontent.com/76265899/202611456-918e2cfb-6d46-47f6-8cea-a6b3fdd3b939.png)
 
+Code pushdown, tüm verileri uygulama katmanına almak yerine kodu veri tabanı katmanına iten ve gerekli sonuç kümesini alan ve gerekli çıktıyı almak için kodu uygulama katmanına yazan bir paradigmadır.
+
+### CDS View Extension 
+#### CDS View Extension 
+##### CDS View Extension 
+
+
+
