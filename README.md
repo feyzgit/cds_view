@@ -1,20 +1,20 @@
 # CDS(Core Data Services) View
 
-Cds, Sap hana nın sağladığı değişimlerden, avantajlardan biridir.
+  Cds, Sap hana nın sağladığı değişimlerden, avantajlardan biridir.
 Cds, veri modellerinin uygulama düzeyi yerine veri tabanı düzeyinde kullanılmasını ve tanımlanmasını sağlayarak performansı artırmayı amaçlar.
 
-Veri modelleri, veri tanımlama dili [DDL] ve veri kontrol dili[DCL] ne dayalıdır.
+  Veri modelleri, veri tanımlama dili [DDL] ve veri kontrol dili[DCL] ne dayalıdır.
 
-Hananın en önemli getirisi veri işleme açısından, işlemeyi daha hızlı hale getirmek için veri tabanına direk erişim sağlaması ve ağ sebebiyle gelişebilecek gecikmeleri ortadan kaldırmasıdır.
+  Hananın en önemli getirisi veri işleme açısından, işlemeyi daha hızlı hale getirmek için veri tabanına direk erişim sağlaması ve ağ sebebiyle gelişebilecek gecikmeleri ortadan kaldırmasıdır.
 Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri tabanı katmanının kendisinde gerçekleştirilir. Bu kodun işlenmek üzere aşağıya itilmesi anlamına gelir yani code push down denilmektedir. Böyle isimlendirmesinin sebebi ise, veriye ulaşma ve onu hazır etme işlemlerini uygulama sunucusu üzerinde yapmaktansa, veri tabanı seviyesine indirgemesi ve yükü veri tabanına vermesidir. 
 
 ![image](https://user-images.githubusercontent.com/76265899/202611456-918e2cfb-6d46-47f6-8cea-a6b3fdd3b939.png)
 
-Code pushdown, tüm verileri uygulama katmanına almak yerine kodu veri tabanı katmanına iten ve gerekli sonuç kümesini alan ve gerekli çıktıyı almak için kodu uygulama katmanına yazan bir paradigmadır.
+  Code pushdown, tüm verileri uygulama katmanına almak yerine kodu veri tabanı katmanına iten ve gerekli sonuç kümesini alan ve gerekli çıktıyı almak için kodu uygulama katmanına yazan bir paradigmadır.
 
 #### CDS View Extension 
 
-CDS Viewler sanal veri modelleri olduğundan bir proje veya bir nesne için oluşturulan CDS View'ler başka bir proje veya nesne içinde kullanma ihtiyacı oluşacaktır. 
+  CDS Viewler sanal veri modelleri olduğundan bir proje veya bir nesne için oluşturulan CDS View'ler başka bir proje veya nesne içinde kullanma ihtiyacı oluşacaktır. 
 Örneğin SPFLI Tablosunun 5 alanını kullanarak bir CDS View oluşturduğumuzu ve başka bir proje için yine SPFLI Tablosunsun 3 alanına daha ihtiyaç duyduğumuzu varsayalım, bu durumda baştan CDS View oluşturmak yerine 'Extend View' seçeneği ile sahip olduğumuz CDS View'e ihtiyaç duyduğumuz alanları dahil edebiliriz. Extend View'lere sadece alan eklenebilir ve 'WHERE' yan tümcesini kullanılamaz.
 
 ![image](https://user-images.githubusercontent.com/76265899/202612936-6b5b5749-0c0c-4207-b0d2-2cf2ebc82598.png)
@@ -23,6 +23,7 @@ CDS Viewler sanal veri modelleri olduğundan bir proje veya bir nesne için olu�
 ![image](https://user-images.githubusercontent.com/76265899/202613538-f24fcccf-9272-4c62-a523-7dc8975ac003.png)
 
 #### Fonksiyonlar
+
   Cds view lerde de kullanabileceğimiz bazı fonksiyonlar mevcut. Bunlar abap kodlarken kullandıklarırmızdan farklı değildir. Numeric ve string fonksiyonlar gibi birçok fonksiyonlardır. En sık kullandıklarımız concat, replace, substring gibidir.
   
   Cds de farklı olan fonksiyonlardan biri ise CURRENCY_CONVERSION.
@@ -35,6 +36,42 @@ CDS Viewler sanal veri modelleri olduğundan bir proje veya bir nesne için olu�
 ### Cds Görünümü
 ![image](https://user-images.githubusercontent.com/76265899/202614273-464a93d3-1733-421f-a0d8-e6e7ff86fa98.png)
 
+#### CDS View Parameters
+
+  CDS View' lerde veri fitrelemek için 'WHERE' yan tümcesini kullanabiliriz. 'Parameters' özelliği ile veri fitrelemesi yapmak mümkündür.
+
+![image](https://user-images.githubusercontent.com/76265899/202615091-0773ff8a-aa21-404e-99bd-6adcdf12271d.png)
+
+#### CDS View Join
+
+  CDS View'ler bir SQL geliştirmesi olup, projelerde verileri anlamlı bir bilgiye dönüştürmek için birden fazla tabloyu birleştirmemiz gerekebilir. CDS view ler de kullandığımız join türleri: 
+
+-Inner Join
+-Left Outer Join
+-Right Outer Join
+
+![image](https://user-images.githubusercontent.com/76265899/202615713-b26a66cf-88c7-4ed2-8db2-3b0412df8100.png)
+
+![image](https://user-images.githubusercontent.com/76265899/202615744-fa8c3651-4472-4587-b127-ec8425949b76.png)
+
+#### CDS View Associations
+
+  Associationlarda aynı joinler gibi veriyi birleştirmemize yarar. Fakat bu kullanım performans dostu bir yaklaşım değildir.
+  Bu performans sorunun üstesinden gelmek için associations kavramı geliştirildi. . Association'lar ile veriler yalnızca kullanıcı onu görmek istediğinde alınır, kullanıcı görmek istemiyorsa veriye erişim olmaz. Kullanılmayan tablolar varsa bu tablolardan veri çekilmez ve tabloya gidilmez. İki çeşit Association türü vardı. Bunlar Ad-Hoc ve Exposed Association olarak adlandırılır. Ad-Hoc Assocation normal Join gibi ikinci tablonun herhangi bir alanını kullanmak üzerine geliştirilen Assocation'lardır. Exposed Association ise ilgili View için bir alan olarak görünmez ancak başka bir View aracılığıyla erişim sağlandığı zaman ya da abap programından direk olarak kullanılabilir.
+  
+  1)Ad-Hoc Association
+    4 Farklı kural ile kullanıyoruz. Bunlar cardinality ile gelen farklılıklardır. Cardinality association nın hangi join kısaca hangi kural ile veri çekeceğini söyler. [ .. ] görünümündedir.
+    -[1..1]       inner join gibi çalışır
+    -[1] | [0..1] bulursa 1 tane bulamazsa getirmez
+    -[0..*]       left outer join gibi çalışır
+    -[1..*]       left outer join gibi çalışır
+    
+  
+![image](https://user-images.githubusercontent.com/76265899/202618344-9f601a9d-f030-49c1-b01a-4dff0ad9d8c0.png)
+
+![image](https://user-images.githubusercontent.com/76265899/202618387-cedbae26-73b6-4236-9abb-8f467dfdeb8c.png)
+
+![image](https://user-images.githubusercontent.com/76265899/202618482-eecc13dd-1dc0-493b-9f19-91744a452f5e.png)
 
 
 
