@@ -66,8 +66,11 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
    4 Farklı kural ile kullanıyoruz. Bunlar cardinality ile gelen farklılıklardır. Cardinality association nın hangi join kısaca hangi kural ile veri çekeceğini söyler. [ .. ] görünümündedir.
     max değeri 0 min değeri ise * alamaz!
 -[1..1]       inner join gibi çalışır
+
 -[1] | [0..1] bulursa 1 tane bulamazsa getirmez
+
 -[0..*]       left outer join gibi çalışır 0 veya tüm girişler
+
 -[1..*]       left outer join gibi çalışır
   
   
@@ -87,7 +90,7 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
   
   ![image](https://user-images.githubusercontent.com/76265899/202619133-27a42835-e617-4edb-b3bb-44c02b2549af.png)
 
-Union & Union All
+#### Union & Union All
   2 farklı tablodaki alanları select çekmek istediğimizde kullanıyoruz. Fakat tablodan çekeceğimiz alanların aynı alanları olması zorunludur.
   Union sorgularında varsayılan mod Union Distinct'dir ve ikinci sorgudaki yinelenen kayıtları ortadan kaldırır.
 
