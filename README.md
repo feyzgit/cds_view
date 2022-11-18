@@ -12,9 +12,14 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
 
 Code pushdown, tüm verileri uygulama katmanına almak yerine kodu veri tabanı katmanına iten ve gerekli sonuç kümesini alan ve gerekli çıktıyı almak için kodu uygulama katmanına yazan bir paradigmadır.
 
-### CDS View Extension 
 #### CDS View Extension 
-##### CDS View Extension 
+
+CDS Viewler sanal veri modelleri olduğundan bir proje veya bir nesne için oluşturulan CDS View'ler başka bir proje veya nesne içinde kullanma ihtiyacı oluşacaktır. 
+Örneğin SPFLI Tablosunun 5 alanını kullanarak bir CDS View oluşturduğumuzu ve başka bir proje için yine SPFLI Tablosunsun 3 alanına daha ihtiyaç duyduğumuzu varsayalım, bu durumda baştan CDS View oluşturmak yerine 'Extend View' seçeneği ile sahip olduğumuz CDS View'e ihtiyaç duyduğumuz alanları dahil edebiliriz. Extend View'lere sadece alan eklenebilir ve 'WHERE' yan tümcesini kullanılamaz.
+
+![image](https://user-images.githubusercontent.com/76265899/202612936-6b5b5749-0c0c-4207-b0d2-2cf2ebc82598.png)
+
+
 
 
 
