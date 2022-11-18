@@ -22,6 +22,20 @@ CDS Viewler sanal veri modelleri olduğundan bir proje veya bir nesne için olu�
 ![image](https://user-images.githubusercontent.com/76265899/202613492-ee4ea526-f290-4fce-b104-58fac4768bb0.png)
 ![image](https://user-images.githubusercontent.com/76265899/202613538-f24fcccf-9272-4c62-a523-7dc8975ac003.png)
 
+#### Fonksiyonlar
+  Cds view lerde de kullanabileceğimiz bazı fonksiyonlar mevcut. Bunlar abap kodlarken kullandıklarırmızdan farklı değildir. Numeric ve string fonksiyonlar gibi birçok fonksiyonlardır. En sık kullandıklarımız concat, replace, substring gibidir.
+  
+  Cds de farklı olan fonksiyonlardan biri ise CURRENCY_CONVERSION.
+  Elimizdeki tabloda para birimleri farklı olsa bile verdiğimiz parametredeki para birimine dönüşür.
+
+![image](https://user-images.githubusercontent.com/76265899/202614248-3d8a5649-9329-4adc-8c93-8f3b2720271f.png)
+Se16n Görünümü
+![image](https://user-images.githubusercontent.com/76265899/202614369-6ff76e39-7e93-4b49-a2f2-6c92ccaf98ff.png)
+
+Cds Görünümü
+![image](https://user-images.githubusercontent.com/76265899/202614273-464a93d3-1733-421f-a0d8-e6e7ff86fa98.png)
+
+
 
 
 
