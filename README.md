@@ -57,16 +57,18 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
 #### CDS View Associations
 
   Associationlarda aynı joinler gibi veriyi birleştirmemize yarar. Fakat bu kullanım performans dostu bir yaklaşım değildir.
-  Bu performans sorunun üstesinden gelmek için associations kavramı geliştirildi. . Association'lar ile veriler yalnızca kullanıcı onu görmek istediğinde alınır, kullanıcı görmek istemiyorsa veriye erişim olmaz. Kullanılmayan tablolar varsa bu tablolardan veri çekilmez ve tabloya gidilmez. İki çeşit Association türü vardı. Bunlar Ad-Hoc ve Exposed Association olarak adlandırılır. Ad-Hoc Assocation normal Join gibi ikinci tablonun herhangi bir alanını kullanmak üzerine geliştirilen Assocation'lardır. Exposed Association ise ilgili View için bir alan olarak görünmez ancak başka bir View aracılığıyla erişim sağlandığı zaman ya da abap programından direk olarak kullanılabilir.
+  Bu performans sorunun üstesinden gelmek için associations kavramı geliştirildi. . Association'lar ile veriler yalnızca kullanıcı onu görmek istediğinde alınır, kullanıcı görmek istemiyorsa veriye erişim olmaz. Kullanılmayan tablolar varsa bu tablolardan veri çekilmez ve tabloya gidilmez. İki çeşit Association türü vardı. Bunlar Ad-Hoc ve Exposed Association olarak adlandırılır. Ad-Hoc Assocation normal Join gibi ikinci tablonun herhangi bir alanını kullanmak üzerine geliştirilen Assocation'lardır.
   
   1)Ad-Hoc Association
-    4 Farklı kural ile kullanıyoruz. Bunlar cardinality ile gelen farklılıklardır. Cardinality association nın hangi join kısaca hangi kural ile veri çekeceğini söyler. [ .. ] görünümündedir.
+   
+   4 Farklı kural ile kullanıyoruz. Bunlar cardinality ile gelen farklılıklardır. Cardinality association nın hangi join kısaca hangi kural ile veri çekeceğini söyler. [ .. ] görünümündedir.
     max değeri 0 min değeri ise * alamaz!
 -[1..1]       inner join gibi çalışır
 -[1] | [0..1] bulursa 1 tane bulamazsa getirmez
 -[0..*]       left outer join gibi çalışır 0 veya tüm girişler
 -[1..*]       left outer join gibi çalışır
-    
+  
+  
   [1..*]*
 ![image](https://user-images.githubusercontent.com/76265899/202618344-9f601a9d-f030-49c1-b01a-4dff0ad9d8c0.png)
 
@@ -76,6 +78,9 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
 
 
 2) Exposed Association
+   
+   Exposed Association ise ilgili View için bir alan olarak görünmez ancak başka bir View aracılığıyla erişim sağlandığı zaman ya da abap programından direk olarak kullanılabilir.
+   
   ![image](https://user-images.githubusercontent.com/76265899/202619066-c5d09030-58c2-4d76-92db-561a99ba9fd4.png)
   
   ![image](https://user-images.githubusercontent.com/76265899/202619133-27a42835-e617-4edb-b3bb-44c02b2549af.png)
