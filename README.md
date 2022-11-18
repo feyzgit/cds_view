@@ -64,7 +64,9 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
   1)Ad-Hoc Association
    
    4 Farklı kural ile kullanıyoruz. Bunlar cardinality ile gelen farklılıklardır. Cardinality association nın hangi join kısaca hangi kural ile veri çekeceğini söyler. [ .. ] görünümündedir.
+   
     max değeri 0 min değeri ise * alamaz!
+    
 -[1..1]       inner join gibi çalışır
 
 -[1] | [0..1] bulursa 1 tane bulamazsa getirmez
