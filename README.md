@@ -61,12 +61,13 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
   
   1)Ad-Hoc Association
     4 Farklı kural ile kullanıyoruz. Bunlar cardinality ile gelen farklılıklardır. Cardinality association nın hangi join kısaca hangi kural ile veri çekeceğini söyler. [ .. ] görünümündedir.
+    max değeri 0 min değeri ise * alamaz!
 -[1..1]       inner join gibi çalışır
 -[1] | [0..1] bulursa 1 tane bulamazsa getirmez
--[0..*]       left outer join gibi çalışır
+-[0..*]       left outer join gibi çalışır 0 veya tüm girişler
 -[1..*]       left outer join gibi çalışır
     
-  
+  [1..*]*
 ![image](https://user-images.githubusercontent.com/76265899/202618344-9f601a9d-f030-49c1-b01a-4dff0ad9d8c0.png)
 
 ![image](https://user-images.githubusercontent.com/76265899/202618387-cedbae26-73b6-4236-9abb-8f467dfdeb8c.png)
@@ -74,6 +75,16 @@ Yoğun veri içeren işlemler  code to data paradigmasını kullanarak veri taba
 ![image](https://user-images.githubusercontent.com/76265899/202618582-ca9f6b7d-0606-4c52-a325-af53984c9cf6.png)
 
 
+2) Exposed Association
+  ![image](https://user-images.githubusercontent.com/76265899/202619066-c5d09030-58c2-4d76-92db-561a99ba9fd4.png)
+  
+  ![image](https://user-images.githubusercontent.com/76265899/202619133-27a42835-e617-4edb-b3bb-44c02b2549af.png)
+
+Union & Union All
+
+  Union sorgularında varsayılan mod Union Distinct'dir ve ikinci sorgudaki yinelenen kayıtları ortadan kaldırır.
+
+  Union All da her iki tabloda ortak olan kayıtlar tolere edilmezler. Tekrar eden kayıtlar sorgu çıktısına dahil edilir. Veri duplicate çekilmiş olur.
 
 
-
+#### Annotiation
